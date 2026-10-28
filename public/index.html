@@ -1,37 +1,78 @@
-V<link rel="stylesheet" href="style.css">
-APEX VEXOTIC RIVALRY
-MULTIPLAYER LIVE
-ONLINE STREET CIRCUIT · UP TO 8 RACERS
-OWN THE APEX.
-Choose your machine. Invite your rival. Race for the finish.
-01
-Race setup
-NO DOWNLOAD REQUIRED
-RACER NAMERacer ROOM CODEAPEX7 EXOTIC CARVortex GTApex RStrada X
-JOIN RACE ↗
-Both players must enter the same room code. Share the public game link, then join the same room from separate devices.
 
-ROOMAPEX7
-RACERS1 / 8
-LAPS0 / 3
-COPY INVITE LINK
-WAITING FOR RIVALS
-Open this link on another device and join room APEX7.
-I'M READY
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>APEX V — Exotic Rivalry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <p>APEX V · EXOTIC RIVALRY</p>
+    <h1>Own the Apex.</h1>
+    <p>Multiplayer live · Online street circuit · Up to 8 racers</p>
+    <p>Choose your machine. Invite your rival. Race for the finish.</p>
+  </header>
 
-RACE GRID
+  <main>
+    <section class="panel">
+      <h2>01 — Race Setup</h2>
+      <label for="racerName">Racer name</label>
+      <input id="racerName" placeholder="Enter your name" maxlength="20">
 
-DRIVING CONTROLS
-W / ↑ Accelerate S / ↓ Brake
-A D or ← → Steer
-On phones: use the touch controls below.
-◀ACCELERATEBRAKE▶
-RACE RULES — READ BEFORE START
-	1	At least 2 racers must join the same room. Everyone taps I'M READY to start.
-	2	Race 3 laps around the oval circuit. The first racer to complete 3 laps wins.
-	3	Follow the track in order: top straight → right side → bottom straight → left side → top straight.
-	4	Stay on the grey road. Leaving the road slows your car; sharp turns at high speed are harder to control.
-	5	Use accelerate, brake and steering controls. Be fair: no external scripts or attempts to disrupt the room.
-	6	If someone disconnects, they leave the race. Tap Restart after the result to set up another race.
-RESTART RACE
-APEX V · EXOTIC RIVALRY BUILT FOR THE THRILL OF THE CHASE
+      <label for="roomCode">Room code</label>
+      <input id="roomCode" value="APEX7" maxlength="12">
+
+      <label for="carChoice">Exotic car</label>
+      <select id="carChoice">
+        <option>Vortex GT</option>
+        <option>Apex R</option>
+        <option>Strada X</option>
+      </select>
+
+      <button id="joinRace">JOIN RACE ↗</button>
+      <p>Both players must enter the same room code on separate devices.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Race Status</h2>
+      <p>Room: <strong id="roomDisplay">APEX7</strong></p>
+      <p>Racers: <strong id="racerCount">1 / 8</strong></p>
+      <p>Laps: <strong id="lapCount">0 / 3</strong></p>
+      <p id="status" class="status">READY TO RACE</p>
+      <button id="copyInvite">COPY INVITE LINK</button>
+      <button id="readyButton">I'M READY</button>
+    </section>
+
+    <section class="panel">
+      <h2>Race Grid</h2>
+      <canvas id="gameCanvas" width="800" height="500">
+        Your browser does not support canvas.
+      </canvas>
+
+      <h2>Driving Controls</h2>
+      <p>Use the buttons to steer and accelerate.</p>
+      <div class="touch-controls">
+        <button id="left">◀ LEFT</button>
+        <button id="accelerate">ACCELERATE</button>
+        <button id="brake">BRAKE</button>
+        <button id="right">RIGHT ▶</button>
+      </div>
+      <button id="restartButton">RESTART RACE</button>
+    </section>
+
+    <section class="panel">
+      <h2>Race Rules</h2>
+      <p>Race three laps around the circuit. Stay on the road, control your speed, and compete fairly.</p>
+      <p>Multiplayer requires a working game server. The visual demo alone does not connect separate players.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>APEX V · EXOTIC RIVALRY — BUILT FOR THE THRILL OF THE CHASE</p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
